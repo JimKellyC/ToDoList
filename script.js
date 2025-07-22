@@ -15,14 +15,17 @@ document.getElementById("submitBtn").onclick = function () {
       <div class="task-item">${inputValue}</div>
       <button class="delete-btn">Delete</button>
     `;
-    newTaskItem.querySelector(".delete-btn").addEventListener("click", function () {
-      newTaskItem.remove();
-      tasks.splice(tasks.findIndex(task => task.title === inputValue), 1); // Remove task from the array
-      console.log(tasks.length);// Remove task from the array
-    });
+    newTaskItem
+      .querySelector(".delete-btn")
+      .addEventListener("click", function () {
+        newTaskItem.remove();
+        tasks.splice(
+          tasks.findIndex((task) => task.title === inputValue),
+          1
+        ); // Remove task from the array
+      });
     document.getElementById("task-list").appendChild(newTaskItem);
 
     document.getElementById("myInput").value = ""; // Clear input field
-    console.log("Task added:", inputValue , tasks.length); // Log the added task
   }
 };
