@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,11 +8,12 @@ body {
   font-family: Arial, sans-serif;
 }
 .container {
+  margin: 0 auto;
   background: #fff;
   padding: 2rem 3rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  min-width: 600px;
+  width: 600px;
   text-align: center;
 }
 
@@ -51,15 +52,51 @@ button {
   font-size: 1.2rem;
   background: #f8f9fa;
   border-radius: 8px;
-
 }
 
-.delete-btn {
-  background-color: #ff4d4d;
+
+.action-btn {
   color: white;
+  margin: 0 0.5rem;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   float: right;
+}
+
+.add-btn {
+  background-color: #2839a7;
+  float: none;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+}
+
+.complete-btn {
+  background-color: #13813a;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    margin: 0 10px 0 10px;
+  }
+  input {
+    width: 70%;
+  }
+  .task-item {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
 }

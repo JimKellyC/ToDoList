@@ -13,7 +13,8 @@ document.getElementById("submitBtn").onclick = function () {
     newTaskItem.className = "task-item"; // Add a class for styling
     newTaskItem.innerHTML = `
       <div class="task-item">${inputValue}</div>
-      <button class="delete-btn">Delete</button>
+      <button class="complete-btn action-btn">Complete</button>
+      <button class="delete-btn action-btn">Delete</button>
     `;
     newTaskItem
       .querySelector(".delete-btn")
@@ -29,3 +30,12 @@ document.getElementById("submitBtn").onclick = function () {
     document.getElementById("myInput").value = ""; // Clear input field
   }
 };
+
+// Function to render tasks from the tasks array
+document.getElementById("task-list").addEventListener("click", function (event) {
+  if (event.target.classList.contains("complete-btn")) {
+    const taskItem = event.target.parentElement;
+    taskItem.querySelector(".task-item").classList.toggle("completed");
+    event.target.textContent = event.target.textContent === "Complete" ? "Undo" : "Complete";
+  }
+});
